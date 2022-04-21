@@ -72,7 +72,7 @@ contract Campaign{
          Request storage newReq = requests[numberOfRequests];
          numberOfRequests++;
          newReq.description = _description;
-         newReq.value = _value;.
+         newReq.value = _value;
          newReq.recipient = _recipient;
          newReq.complete = false;
          newReq.approvalCount = 0;
@@ -89,19 +89,6 @@ contract Campaign{
         request.approvals[msg.sender] = true;
         request.approvalCount++;
     }
-    
-    //final approval of request by the manager and sending the amount
-    function finalizeRequest(uint index) public authorization{
-        Request storage request = requests[index];
-        
-        require(request.approvalCount > (approversCount/2));
-        require(!request.complete);
-        
-        request.recipient.transfer(request.value);
-        request.complete = true;
-        
-    }
-
     // function to retrieve Campaign balance, minimumContribution , no of requests , no of Contributors and manager address
     function getSummary() public view returns (
         uint, uint, uint, uint, address

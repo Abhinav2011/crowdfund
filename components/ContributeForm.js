@@ -39,10 +39,11 @@ class ContributeForm extends Component {
   };
   render() {
     return (
-      <Form onSubmit={this.onSubmit} error={!!this.state.errMsg}>
+      <Form id="contributeForm" onSubmit={this.onSubmit} error={!!this.state.errMsg}>
         <Form.Field>
           <label>Amount to Contribute</label>
           <Input
+            id="contributeEther"
             label="ether"
             labelPosition="right"
             value={this.state.value}

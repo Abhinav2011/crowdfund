@@ -43,6 +43,7 @@ class AllCampaignPage extends Component {
             <Grid.Column>
               <Link href="/campaigns/new">
                 <Button
+                  id="newCampaign"
                   floated="right"
                   color="green"
                   content="Create a New Campaign"

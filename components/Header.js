@@ -10,7 +10,7 @@ const HeadComponent = () => {
       <Menu.Menu position="right">
         <Menu.Item>
           <Link href="/">
-            <Button content="View all campaign" icon="eye" />
+            <Button id="viewAllCampaigns" content="View all campaign" icon="eye" />
           </Link>
         </Menu.Item>
       </Menu.Menu>

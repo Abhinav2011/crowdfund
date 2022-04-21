@@ -1,7 +1,7 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const Web3 = require("web3");
 const compiledFactory = require("./build/CampaignFactory.json");
-const mnemonicPhrase = 'shed mad hire fuel mad scan mirror cliff peace menu electric firm';
+const mnemonicPhrase = 'bargain lecture book link talent laundry weekend pigeon claw walnut document stadium';
 const network = 'HTTP://127.0.0.1:7545';
 
 const provider = new HDWalletProvider({

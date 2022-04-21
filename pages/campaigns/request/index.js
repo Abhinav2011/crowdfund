@@ -5,6 +5,7 @@ import Link from "next/link";
 import "semantic-ui-css/semantic.min.css";
 import Campaign from "../../../ethereum/Campaign"
 import RequestRow from "../../../components/RequestRow";
+
 class ShowRequest extends Component {
   static async getInitialProps({ query }) {
     const address = query.show;
@@ -14,7 +15,7 @@ class ShowRequest extends Component {
     console.log(requestCount)
     const requests = await Promise.all(
         Array(requestCount).fill().map((element,index) => {
-            return campaign.methods.requests(index).call()
+            return campaign.methods.requests(parseInt(index)).call()
         })
     )
     console.log(requests)
@@ -24,14 +25,15 @@ class ShowRequest extends Component {
   }
   renderRow(){
     return this.props.requests.map((request,index) => {
+      // console.log(request)
       return (
-        <RequestRow>
+        <RequestRow
           key={index}
           id={index}
           request={request}
           address={this.props.address}
           approversCount={this.props.approversCount}
-        </RequestRow>
+        />
       )
     })
   }

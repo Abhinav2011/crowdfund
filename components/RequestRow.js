@@ -4,6 +4,7 @@ import "semantic-ui-css/semantic.min.css";
 import Campaign from "../ethereum/Campaign";
 import web3 from "../ethereum/web3";
 class RequestRow extends Component {
+
   onApprove = async () => {
     const campaign = Campaign(this.props.address);
     const accounts = await web3.eth.getAccounts();
@@ -18,21 +19,24 @@ class RequestRow extends Component {
       from: accounts[0],
     });
   };
+  
   render() {
-    const { id, request, approversCount } = this.props;
+    const {id, request, approversCount} = this.props  
+    console.log(this.props.approversCount)
     const getInEther = (value) => {
       const valueInEther = web3.utils.fromWei(value, "ether");
       return valueInEther;
     };
     return (
       <Table.Row>
-        <Table.Cell>{id + 1}</Table.Cell>
+        <Table.Cell>{this.props.id}</Table.Cell>
         <Table.Cell>{request.description}</Table.Cell>
         <Table.Cell>{getInEther(request.value)}</Table.Cell>
         <Table.Cell>{request.recipient}</Table.Cell>
         <Table.Cell>
-          {request.approvalCount}/{request.approversCount}
+          {request.approvalCount}/{approversCount}
         </Table.Cell>
+        
         <Table.Cell>
           {request.complete ? (
             <div>Completed</div>

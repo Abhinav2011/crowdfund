@@ -41,11 +41,13 @@ class CreateNewCampagin extends Component {
           onSubmit={this.onSubmit}
           style={{ marginTop: "25px" }}
           error={!!this.state.errMsg}
+          id="newCampaignForm"
         >
           <Form.Field>
             <label>Minimum Contribution</label>
             <Input
               label="wei"
+              id="minValue"
               style={{ paddingTop: "5px" }}
               value={this.state.minContribution}
               onChange={(event) => {

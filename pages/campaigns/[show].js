@@ -52,21 +52,21 @@ class ShowCampaign extends Component {
         header: getInEther(balance),
         meta: "Current balance",
         description:
-          "This is the address of the manager of who created this campaign",
+          "This is the current balance of this campaign",
         style: { overflowWrap: "break-word" },
       },
       {
         header: requestCount,
         meta: "Total amount of request",
         description:
-          "This is the address of the manager of who created this campaign",
+          "This is the total number of requests of this campaign",
         style: { overflowWrap: "break-word" },
       },
       {
         header: approverCount,
         meta: "Total amount of approvers",
         description:
-          "This is the address of the manager of who created this campaign",
+          "This is the total amount of approvers of this campaign",
         style: { overflowWrap: "break-word" },
       },
     ];
